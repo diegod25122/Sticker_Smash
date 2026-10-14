@@ -14,8 +14,9 @@ import IconButton from '@/components/IconButton';
 import ImageViewer from '@/components/ImageViewer';
 
 import EmojiSticker from '@/components/EmojiSticker';
+import { EPN } from '@/constants/epn-theme';
 
-const PlaceholderImage = require('@/assets/images/background-image.png');
+const PlaceholderImage = require('@/assets/images/epn.jpg');
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(
@@ -79,7 +80,7 @@ export default function Index() {
       }
     } else {
       try {
-        // On web, the View ref is a DOM element
+   
         const dataUrl = await domtoimage.toJpeg(imageRef.current as unknown as Node, {
           quality: 0.95,
           width: 320,
@@ -127,7 +128,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: EPN.primary,
     alignItems: 'center',
   },
   imageContainer: {

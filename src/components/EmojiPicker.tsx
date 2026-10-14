@@ -1,6 +1,7 @@
 import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
 import { PropsWithChildren } from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { EPN } from '@/constants/epn-theme';
 
 type Props = PropsWithChildren<{
   isVisible: boolean;
@@ -15,7 +16,7 @@ export default function EmojiPicker({ isVisible, children, onClose }: Props) {
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Choose a sticker</Text>
             <Pressable onPress={onClose}>
-              <MaterialIcons name="close" color="#fff" size={22} />
+              <MaterialIcons name="close" color={EPN.text} size={22} />
             </Pressable>
           </View>
           {children}
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   modalContent: {
     height: '25%',
     width: '100%',
-    backgroundColor: '#25292e',
+    backgroundColor: EPN.primaryAlt,
     borderTopRightRadius: 18,
     borderTopLeftRadius: 18,
     position: 'absolute',
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     height: '16%',
-    backgroundColor: '#464C55',
+    backgroundColor: EPN.primary,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     paddingHorizontal: 20,
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    color: '#fff',
+    color: EPN.text,
     fontSize: 16,
   },
 });

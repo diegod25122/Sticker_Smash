@@ -1,5 +1,6 @@
 import { View, StyleSheet } from 'react-native';
 import { Link, Stack } from 'expo-router';
+import { EPN } from '@/constants/epn-theme';
 
 export default function NotFoundScreen() {
   return (
@@ -17,7 +18,7 @@ export default function NotFoundScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: EPN.primary,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
   button: {
     fontSize: 20,
     textDecorationLine: 'underline',
-    color: '#fff',
+    color: EPN.text,
   },
 });

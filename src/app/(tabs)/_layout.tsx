@@ -1,19 +1,25 @@
 import { Tabs } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { EPN } from '@/constants/epn-theme';
 
 export default function TabsLayout() {
   return (
     <Tabs
      screenOptions={{
-    tabBarActiveTintColor: '#ffd33d',
-    tabBarInactiveTintColor: '#fff',
+    tabBarActiveTintColor: EPN.accent,
+    tabBarInactiveTintColor: EPN.text,
     headerStyle: {
-      backgroundColor: '#25292e',
+      backgroundColor: EPN.accent,
     },
     headerShadowVisible: false,
-    headerTintColor: '#fff',
+    headerBackground: () => <View style={styles.headerBackground} />,
+    headerTintColor: EPN.text,
+    headerTitleStyle: {
+      fontWeight: '700',
+    },
     tabBarStyle: {
-      backgroundColor: '#25292e',
+      backgroundColor: EPN.primary,
     },
   }}
       
@@ -22,7 +28,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'StickerSmash',
+          title: 'Escuela Politecnica Nacional',
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
           ),
@@ -44,3 +50,11 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
+const styles = StyleSheet.create({
+  headerBackground: {
+    flex: 1,
+    backgroundColor: EPN.accent,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: EPN.text,
+  },
+});

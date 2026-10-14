@@ -1,5 +1,6 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { EPN } from '@/constants/epn-theme';
 
 
 type Props = {
@@ -14,13 +15,13 @@ export default function Button({ label, theme, onPress }: Props) {
       <View
         style={[
           styles.buttonContainer,
-          { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 },
+          { borderWidth: 4, borderColor: EPN.accent, borderRadius: 18 },
         ]}>
         <Pressable
-          style={[styles.button, { backgroundColor: '#fff' }]}
+          style={[styles.button, { backgroundColor: EPN.surface }]}
           onPress={(onPress)}>
-          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
-          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+          <FontAwesome name="picture-o" size={18} color={EPN.onSurface} style={styles.buttonIcon} />
+          <Text style={[styles.buttonLabel, { color: EPN.onSurface }]}>{label}</Text>
         </Pressable>
       </View>
     );
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
   buttonLabel: {
-    color: '#fff',
+    color: EPN.text,
     fontSize: 16,
   },
 });
